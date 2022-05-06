@@ -12,7 +12,7 @@ public abstract class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected int id;
 
-    protected String name;
+	protected String name;
 
     public int getId() {
         return this.id;
