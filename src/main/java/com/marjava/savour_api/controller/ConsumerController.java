@@ -4,17 +4,10 @@ import com.marjava.savour_api.model.Consumer;
 import com.marjava.savour_api.repository.ConsumerRepository;
 import com.marjava.savour_api.util.WasSuccessful;
 
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/consumer")
@@ -28,7 +21,7 @@ public class ConsumerController {
 
     @GetMapping("/{id}")
     public Consumer getConsumer(@PathVariable int id) {
-        return repo.findById(id).orElseThrow();
+        return repo.findById(id).orElseThrow(ResourceNotFoundException::new);
     }
 
     @PostMapping
@@ -38,7 +31,7 @@ public class ConsumerController {
 
     @PutMapping("/{id}")
     public Consumer updateConsumer(@PathVariable int id, @RequestBody Consumer cons) {
-       Consumer main = repo.findById(id).orElseThrow();
+       Consumer main = repo.findById(id).orElseThrow(ResourceNotFoundException::new);
        main.update(cons);
 
        return repo.save(main);
@@ -46,7 +39,7 @@ public class ConsumerController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<WasSuccessful> deleteConsumer(@PathVariable int id) {
-        Consumer cons = repo.findById(id).orElseThrow();
+        Consumer cons = repo.findById(id).orElseThrow(ResourceNotFoundException::new);
         repo.delete(cons);
 
         return new ResponseEntity<WasSuccessful>(new WasSuccessful(true), HttpStatus.OK);
