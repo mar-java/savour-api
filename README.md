@@ -15,11 +15,11 @@
     <a href="https://github.com/mar-java/savour-api/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://pyquad.github.io/peak.py/">Download</a>
+    <a href="https://github.com/mar-java/savour-api/">Download</a>
     ·
-    <a href="https://github.com/PyQuad/peak.py">Report Bug</a>
+    <a href="https://github.com/mar-java/savour-api/">Report Bug</a>
     ·
-    <a href="https://github.com/PyQuad/peak.py">Request Feature</a>
+    <a href="https://github.com/mar-java/savour-api/">Request Feature</a>
 
   </p>
 </div>
