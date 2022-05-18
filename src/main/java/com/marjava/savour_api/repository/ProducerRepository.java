@@ -1,3 +1,5 @@
+package com.marjava.savour_api.repository;
+
 import com.marjava.savour_api.model.Producer;
 
 import org.springframework.data.repository.CrudRepository;
