@@ -36,11 +36,7 @@
 
 
 
-<div align="center">
-  <a href="https://github.com/mar-java/savour-api">
-    <img src="" alt="Logo">
-  </a> 
-</div>
+
 
 
 
